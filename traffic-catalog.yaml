@@ -22,7 +22,7 @@ metadata:
   name: catalog-scheduler
 spec:
   description: Catalog for scheduler
-  amd64: accalik/traffic-scheduler:0.1.8
+  amd64: accalik/traffic-scheduler:1.0.0
   registry: remote
 ---
 apiVersion: datasance.com/v3
@@ -40,5 +40,5 @@ metadata:
   name: catalog-generator
 spec:
   description: Catalog for generator
-  amd64: accalik/traffic-generator:0.1.6
+  amd64: accalik/traffic-generator:1.0.0
   registry: remote

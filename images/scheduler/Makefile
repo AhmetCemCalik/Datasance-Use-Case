@@ -1,5 +1,5 @@
 IMAGE_NAME := accalik/traffic-scheduler
-VERSION ?= 0.1.8
+VERSION ?= 1.0.0
 PLATFORM := linux/amd64
 
 .PHONY: push clean

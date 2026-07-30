@@ -1,3 +1,8 @@
+/*
+0.1.8 -> First version
+1.0.0 -> Final version constant tuning
+*/
+
 #include <stdlib.h>
 #include <stdio.h>
 #include <unistd.h>
@@ -8,7 +13,7 @@
 #include <errno.h>
 #include <nats/nats.h>
 
-#define CARS_PER_GREEN_INTERVAL 10
+#define CARS_PER_GREEN_INTERVAL 15
 
 typedef struct {
     atomic_int *light_1_is_green;

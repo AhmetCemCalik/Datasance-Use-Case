@@ -3,6 +3,7 @@
 0.1.6 -> Scheduling rule fix
 0.1.7 -> Update for generator
 0.1.8 -> 3rd light fix
+1.0.0 -> Final with constant tweaks
  */
 
 #include <stdlib.h>
@@ -15,7 +16,7 @@
 #include <limits.h>
 #include <stdatomic.h>
 
-#define LIGHT_SWITCH_INTERVAL_SECONDS 60
+#define LIGHT_SWITCH_INTERVAL_SECONDS 40
 #define LIGHT_2_VEHICLE_THRESHOLD 20
 
 typedef struct {
