@@ -1,0 +1,13 @@
+{
+  "name": "traffic-dashboard",
+  "version": "0.1.4",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "express": "^5.1.0",
+    "nats": "^2.29.3"
+  }
+}

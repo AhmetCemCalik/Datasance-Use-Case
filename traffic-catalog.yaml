@@ -1,0 +1,44 @@
+apiVersion: datasance.com/v3
+kind: CatalogItem
+metadata:
+  name: catalog-observer
+spec:
+  description: Catalog for observer
+  amd64: accalik/traffic-observer:0.1.7
+  registry: remote
+---
+apiVersion: datasance.com/v3
+kind: CatalogItem
+metadata:
+  name: catalog-light
+spec:
+  description: Catalog for traffic light
+  amd64: accalik/traffic-light:0.1.5
+  registry: remote
+---
+apiVersion: datasance.com/v3
+kind: CatalogItem
+metadata:
+  name: catalog-scheduler
+spec:
+  description: Catalog for scheduler
+  amd64: accalik/traffic-scheduler:0.1.8
+  registry: remote
+---
+apiVersion: datasance.com/v3
+kind: CatalogItem
+metadata:
+  name: catalog-dashboard
+spec:
+  description: Catalog for dashboard
+  amd64: accalik/traffic-dashboard:0.1.5
+  registry: remote
+---
+apiVersion: datasance.com/v3
+kind: CatalogItem
+metadata:
+  name: catalog-generator
+spec:
+  description: Catalog for generator
+  amd64: accalik/traffic-generator:0.1.6
+  registry: remote

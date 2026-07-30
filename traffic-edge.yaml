@@ -1,0 +1,60 @@
+# obselete yaml, now that we are deploying into the existing edgelets.
+# If we decide to use new vm's instead, this can be used.
+
+---
+apiVersion: datasance.com/v3
+kind: Agent
+metadata:
+  name: traffic-edge-1
+  namespace: remote-cp
+spec:
+  host: # edgelet_ip
+  ssh:
+    user: emirhan_durmus
+    keyFile: /Users/agmey/Documents/Datasance-Use-Case/ahmet-gcp
+    port: 22
+  package:
+    version: v1.0.1
+  config:
+    description: Traffic junction edgelet 1
+    arch: amd64
+    deploymentType: native
+    containerEngine: edgelet
+---
+apiVersion: datasance.com/v3
+kind: Agent
+metadata:
+  name: traffic-edge-2
+  namespace: remote-cp
+spec:
+  host: # edgelet_ip
+  ssh:
+    user: emirhan_durmus
+    keyFile: /Users/agmey/Documents/Datasance-Use-Case/ahmet-gcp
+    port: 22
+  package:
+    version: v1.0.1
+  config:
+    description: Traffic junction edgelet 1
+    arch: amd64
+    deploymentType: native
+    containerEngine: edgelet
+---
+apiVersion: datasance.com/v3
+kind: Agent
+metadata:
+  name: traffic-edge-3
+  namespace: remote-cp
+spec:
+  host: # edgelet_ip
+  ssh:
+    user: emirhan_durmus
+    keyFile: /Users/agmey/Documents/Datasance-Use-Case/ahmet-gcp
+    port: 22
+  package:
+    version: v1.0.1
+  config:
+    description: Traffic junction edgelet 1
+    arch: amd64
+    deploymentType: native
+    containerEngine: edgelet

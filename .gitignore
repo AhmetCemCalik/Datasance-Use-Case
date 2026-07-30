@@ -1,0 +1,6 @@
+*.o
+*.out
+build/
+bin/
+node_modules/
+.DS_Store

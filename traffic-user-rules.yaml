@@ -1,0 +1,50 @@
+---
+apiVersion: datasance.com/v3
+kind: NatsUserRule
+metadata:
+  name: light-user-rule
+spec:
+  description: user rules for the traffic lights
+  maxSubscriptions: -1
+  maxPayload: 1048576
+  maxData: -1
+  bearerToken: false
+  allowedConnectionTypes:
+    - STANDARD
+  pubAllow:
+    - traffic.junction.1.state.>
+  subAllow:
+    - traffic.junction.1.command.>
+---
+apiVersion: datasance.com/v3
+kind: NatsUserRule
+metadata:
+  name: observer-user-rule
+spec:
+  description: user rules for the traffic observers
+  maxSubscriptions: -1
+  maxPayload: 1048576
+  maxData: -1
+  bearerToken: false
+  allowedConnectionTypes:
+    - STANDARD
+  pubAllow:
+    - traffic.junction.1.observation.>
+---
+apiVersion: datasance.com/v3
+kind: NatsUserRule
+metadata:
+  name: scheduler-user-rule
+spec:
+  description: user rules for the junction scheduler
+  maxSubscriptions: -1
+  maxPayload: 1048576
+  maxData: -1
+  bearerToken: false
+  allowedConnectionTypes:
+    - STANDARD
+  pubAllow:
+    - traffic.junction.1.command.>
+  subAllow:
+    - traffic.junction.1.state.>
+    - traffic.junction.1.observation.>

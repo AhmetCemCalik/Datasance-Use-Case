@@ -1,0 +1,231 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1"
+    >
+
+    <title>Traffic Control Dashboard</title>
+
+    <link rel="stylesheet" href="/style.css">
+</head>
+
+<body>
+    <main>
+        <header>
+            <div>
+                <p class="eyebrow">Datasance PoT</p>
+                <h1>Traffic Control Dashboard</h1>
+            </div>
+
+            <div
+                id="connection-status"
+                class="status"
+            >
+                Connecting
+            </div>
+        </header>
+
+        <section
+            class="junction-map"
+            aria-label="Traffic junction overview"
+        >
+            <svg
+                class="road-layout"
+                viewBox="0 0 1200 700"
+                role="img"
+                aria-label="Three-light inverted T junction"
+            >
+                <!-- Horizontal road -->
+                <rect
+                    class="road-border"
+                    x="100"
+                    y="320"
+                    width="1060"
+                    height="180"
+                    rx="20"
+                />
+
+                <rect
+                    class="road-surface"
+                    x="108"
+                    y="328"
+                    width="1044"
+                    height="164"
+                    rx="14"
+                />
+
+                <!-- Vertical road entering from above -->
+                <rect
+                    class="road-border"
+                    x="330"
+                    y="40"
+                    width="240"
+                    height="370"
+                />
+
+                <rect
+                    class="road-surface"
+                    x="338"
+                    y="48"
+                    width="224"
+                    height="362"
+                />
+
+                <!-- Intersection surface, drawn over both roads -->
+                <rect
+                    class="road-surface"
+                    x="338"
+                    y="328"
+                    width="224"
+                    height="164"
+                />
+
+                <!-- Vertical road center line -->
+                <line
+                    class="lane-line"
+                    x1="450"
+                    y1="65"
+                    x2="450"
+                    y2="300"
+                />
+
+                <!-- Left side of horizontal road -->
+                <line
+                    class="lane-line"
+                    x1="130"
+                    y1="410"
+                    x2="320"
+                    y2="410"
+                />
+
+                <!-- Right side of horizontal road -->
+                <line
+                    class="lane-line"
+                    x1="580"
+                    y1="410"
+                    x2="1130"
+                    y2="410"
+                />
+
+                <!-- Stop line for Light 1 -->
+                <line
+                    class="stop-line"
+                    x1="350"
+                    y1="310"
+                    x2="550"
+                    y2="310"
+                />
+
+                <!-- Stop line for Light 2 -->
+                <line
+                    class="stop-line"
+                    x1="760"
+                    y1="340"
+                    x2="760"
+                    y2="480"
+                />
+
+                <!-- Stop line for Light 3 -->
+                <line
+                    class="stop-line"
+                    x1="1000"
+                    y1="340"
+                    x2="1000"
+                    y2="480"
+                />
+
+                <!-- Light 1 -->
+                <g
+                    class="map-light"
+                    data-map-light-id="1"
+                    transform="translate(450 275)"
+                >
+                    <circle
+                        class="junction-marker"
+                        r="20"
+                    />
+
+                    <text
+                        class="junction-number"
+                        text-anchor="middle"
+                        y="6"
+                    >
+                        1
+                    </text>
+                </g>
+
+                <!-- Light 2 -->
+                <g
+                    class="map-light"
+                    data-map-light-id="2"
+                    transform="translate(820 410)"
+                >
+                    <circle
+                        class="junction-marker"
+                        r="20"
+                    />
+
+                    <text
+                        class="junction-number"
+                        text-anchor="middle"
+                        y="6"
+                    >
+                        2
+                    </text>
+                </g>
+
+                <!-- Light 3 -->
+                <g
+                    class="map-light"
+                    data-map-light-id="3"
+                    transform="translate(1080 410)"
+                >
+                    <circle
+                        class="junction-marker"
+                        r="20"
+                    />
+
+                    <text
+                        class="junction-number"
+                        text-anchor="middle"
+                        y="6"
+                    >
+                        3
+                    </text>
+                </g>
+            </svg>
+
+            <div
+                id="light-1-slot"
+                class="light-panel light-panel-1"
+            ></div>
+
+            <div
+                id="light-2-slot"
+                class="light-panel light-panel-2"
+            ></div>
+
+            <div
+                id="light-3-slot"
+                class="light-panel light-panel-3"
+            ></div>
+        </section>
+
+        <p
+            id="empty-state"
+            class="empty-state"
+        >
+            Waiting for traffic data…
+        </p>
+    </main>
+
+    <script
+        type="module"
+        src="/app.js"
+    ></script>
+</body>
+</html>

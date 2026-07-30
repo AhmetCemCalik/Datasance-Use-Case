@@ -1,0 +1,43 @@
+apiVersion: datasance.com/v3
+kind: Microservice
+metadata:
+  name: traffic-dashboard
+spec:
+  name: traffic-dashboard
+  agent:
+    name: ops-b
+  images:
+    catalogId: 8
+  container:
+    annotations: {}
+    hostNetworkMode: false
+    isPrivileged: false
+    runAsUser: ''
+    ipcMode: ''
+    pidMode: ''
+    platform: ''
+    runtime: ''
+    cdiDevices: []
+    capAdd: []
+    capDrop: []
+    env:
+      - key: NATS_URL
+        value: "nats://nats.default.svc.bridge.local:4222"
+      - key: STATE_SUBJECT
+        value: "traffic.state.>"
+    extraHosts: []
+    ports:
+      - internal: 8080
+        external: 8084
+    cpuSetCpus: ''
+    commands: []
+    healthCheck: {}
+  serviceAccount:
+    roleRef:
+      kind: Role
+      name: microservice
+  natsConfig:
+    natsAccess: true
+    natsRule: default-user
+  config: {}
+  application: traffic-use-case-cluster
